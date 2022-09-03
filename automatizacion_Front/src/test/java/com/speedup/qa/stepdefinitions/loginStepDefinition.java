@@ -1,5 +1,7 @@
 package com.speedup.qa.stepdefinitions;
 
+import com.speedup.qa.models.CredentialsData;
+import com.speedup.qa.tasks.LoginUser;
 import com.speedup.qa.tasks.OpenBrowser;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -10,6 +12,8 @@ import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -31,8 +35,8 @@ public class loginStepDefinition {
     }
 
     @When("^enter the username and password$")
-    public void enterTheUsernameAndPassword() {
-
+    public void enterTheUsernameAndPassword(List<CredentialsData> data) {
+        OnStage.theActorInTheSpotlight().attemptsTo(LoginUser.withTheData(data.get(0)));
     }
 
     @Then("^will enter the web already with the user$")
