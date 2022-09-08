@@ -7,6 +7,6 @@ Feature: Login
 
     Given enter the portal Linkedin
     When enter the username and password
-      | user             | password |
-      | miguel@gmail.com | 123123   |
-    Then will enter the web already with the user
+      | user                | password   |
+      | qacuenta0@GMAIL.COM | mentorship |
+    Then will enter the web already with the user Welcome, cuenta!
