@@ -11,6 +11,7 @@ public class OpenBrowser implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.url("https://www.linkedin.com/"));
+
     }
     public static OpenBrowser browser(){
         return Tasks.instrumented(OpenBrowser.class);
