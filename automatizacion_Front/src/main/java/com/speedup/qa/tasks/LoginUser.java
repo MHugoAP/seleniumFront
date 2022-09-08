@@ -6,9 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static com.speedup.qa.userinterfaces.Login.ENTER_LOGIN_SCREEN;
-import static com.speedup.qa.userinterfaces.Login.USER_NAME;
-import static com.speedup.qa.userinterfaces.Login.USER_PASSWORD;
+import static com.speedup.qa.userinterfaces.Login.*;
 
 public class LoginUser implements Task {
 
@@ -23,6 +21,7 @@ public class LoginUser implements Task {
         actorLogin.attemptsTo(Click.on(ENTER_LOGIN_SCREEN));
         actorLogin.attemptsTo(Enter.theValue(credentialsDataInstance.getUser()).into(USER_NAME));
         actorLogin.attemptsTo(Enter.theValue(credentialsDataInstance.getPassword()).into(USER_PASSWORD));
+        actorLogin.attemptsTo(Click.on(LOGIN));
 
     }
     public static LoginUser withTheData(CredentialsData credentialsData){
